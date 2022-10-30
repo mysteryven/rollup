@@ -304,6 +304,7 @@ export class ModuleLoader {
 		}
 	}
 
+	// Note: 这个是在考虑多个示例同时启动的情况？
 	private async awaitLoadModulesPromise(): Promise<void> {
 		let startingPromise;
 		do {

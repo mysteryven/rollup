@@ -1095,6 +1095,7 @@ export default class Chunk {
 	}
 
 	// This method changes properties on the AST before rendering and must not be async
+	// !import 重点是这个 renderModules 的函数
 	private renderModules(fileName: string) {
 		const {
 			accessedGlobalsByScope,

@@ -224,6 +224,7 @@ export default class Graph {
 	}
 
 	private sortModules(): void {
+		debugger
 		const { orderedModules, cyclePaths } = analyseModuleExecution(this.entryModules);
 		for (const cyclePath of cyclePaths) {
 			this.options.onwarn(errorCircularDependency(cyclePath));

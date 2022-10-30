@@ -144,6 +144,7 @@ export class NodeBase extends ExpressionEntity implements ExpressionNode {
 	) {
 		super();
 		this.esTreeNode = esTreeNode;
+		// ? keys 在这里设置的，并且还有默认的 可以
 		this.keys = keys[esTreeNode.type] || getAndCreateKeys(esTreeNode);
 		this.parent = parent;
 		this.context = parent.context;
@@ -178,6 +179,7 @@ export class NodeBase extends ExpressionEntity implements ExpressionNode {
 
 	/**
 	 * Override if this node should receive a different scope than the parent scope.
+	 * 意思也就是说在最基本的实现是不需要建一个独立的上下文的，但是有的却需要，需要的时候再重写
 	 */
 	createScope(parentScope: ChildScope): void {
 		this.scope = parentScope;
